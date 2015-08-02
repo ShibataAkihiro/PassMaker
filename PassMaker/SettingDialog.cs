@@ -8,26 +8,34 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PassMaker
+namespace SimplePasswordGenerator
 {
     public partial class SettingDialog : Form
     {
 
-        PasswordMaker rootWindow { get; }
-        public SettingDialog(PasswordMaker parent)
+        MainWindow mainWindow { get; }
+        public SettingDialog(MainWindow parent)
         {
             InitializeComponent();
-            rootWindow = parent;
-            if (rootWindow.TopMost)
+            mainWindow = parent;
+            if (mainWindow.TopMost)
             {
                 _topMostCheckBox.Checked = true;
             }
-            _logEnableCheckBox.Checked = rootWindow.logHandler.Enable;
-            _logFileTextBox.Text = rootWindow.logHandler.FilePath;
-            _logFileTextBox.Enabled = _logEnableCheckBox.Checked;
-            _openFileButton.Enabled = _logEnableCheckBox.Checked;
-            _linkLabel1.Enabled = _logEnableCheckBox.Checked;
-
+            _logEnableCheckBox.Checked = mainWindow.logHandler.Enable;
+            _logFileTextBox.Text = mainWindow.logHandler.FilePath;
+            if (_logEnableCheckBox.Checked)
+            {
+                _logFileTextBox.Enabled = true;
+                _openFileButton.Enabled = true;
+                _appSettingLinkLabel1.Enabled = true;
+            }
+            else
+            {
+                _logFileTextBox.Enabled = false;
+                _openFileButton.Enabled = false;
+                _appSettingLinkLabel1.Enabled = false;
+            }
         }
 
         private void _okButton_Click(object sender, EventArgs e)
@@ -49,15 +57,14 @@ namespace PassMaker
                     }
                 }
             }
-            rootWindow.TopMost = _topMostCheckBox.Checked;
-            rootWindow.logHandler.Enable = _logEnableCheckBox.Checked;
-            rootWindow.logHandler.FilePath = _logFileTextBox.Text;
+            mainWindow.TopMost = _topMostCheckBox.Checked;
+            mainWindow.logHandler.Enable = _logEnableCheckBox.Checked;
+            mainWindow.logHandler.FilePath = _logFileTextBox.Text;
             this.Close();
         }
 
         private void _cancelButton_Click(object sender, EventArgs e)
         {
-            
             this.Close();
         }
 
@@ -70,9 +77,18 @@ namespace PassMaker
 
         private void _logEnableCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            _logFileTextBox.Enabled = _logEnableCheckBox.Checked;
-            _openFileButton.Enabled = _logEnableCheckBox.Checked;
-            _linkLabel1.Enabled = _logEnableCheckBox.Checked;
+            if (_logEnableCheckBox.Checked)
+            {
+                _logFileTextBox.Enabled = true;
+                _openFileButton.Enabled = true;
+                _appSettingLinkLabel1.Enabled = true;
+            }
+            else
+            {
+                _logFileTextBox.Enabled = false;
+                _openFileButton.Enabled = false;
+                _appSettingLinkLabel1.Enabled = false;
+            }
         }
 
         private void _linkLabel1_Click(object sender, EventArgs e)

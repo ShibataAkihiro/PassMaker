@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PassMaker.Properties
+namespace SimplePasswordGenerator.Properties
 {
 
 

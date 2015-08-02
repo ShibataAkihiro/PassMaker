@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PassMaker
+namespace SimplePasswordGenerator
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace PassMaker
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PasswordMaker());
+            Application.Run(new MainWindow());
         }
     }
 }

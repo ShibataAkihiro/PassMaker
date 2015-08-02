@@ -1,4 +1,4 @@
-﻿namespace PassMaker
+﻿namespace SimplePasswordGenerator
 {
     partial class SettingDialog
     {
@@ -39,7 +39,7 @@
             this._cancelButton = new System.Windows.Forms.Button();
             this._okButton = new System.Windows.Forms.Button();
             this._openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this._linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this._appSettingLinkLabel1 = new System.Windows.Forms.LinkLabel();
             this._groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +72,7 @@
             // 
             // _groupBox1
             // 
-            this._groupBox1.Controls.Add(this._linkLabel1);
+            this._groupBox1.Controls.Add(this._appSettingLinkLabel1);
             this._groupBox1.Controls.Add(this._openFileButton);
             this._groupBox1.Controls.Add(this._logEnableCheckBox);
             this._groupBox1.Controls.Add(this._logFileTextBox);
@@ -139,16 +139,16 @@
             // 
             // _linkLabel1
             // 
-            this._linkLabel1.AutoSize = true;
-            this._linkLabel1.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this._linkLabel1.Location = new System.Drawing.Point(353, 38);
-            this._linkLabel1.Name = "_linkLabel1";
-            this._linkLabel1.Size = new System.Drawing.Size(60, 11);
-            this._linkLabel1.TabIndex = 5;
-            this._linkLabel1.TabStop = true;
-            this._linkLabel1.Text = "ファイルを開く";
-            this.toolTip1.SetToolTip(this._linkLabel1, "ファイルをメモ帳で開きます。");
-            this._linkLabel1.Click += new System.EventHandler(this._linkLabel1_Click);
+            this._appSettingLinkLabel1.AutoSize = true;
+            this._appSettingLinkLabel1.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this._appSettingLinkLabel1.Location = new System.Drawing.Point(353, 38);
+            this._appSettingLinkLabel1.Name = "_linkLabel1";
+            this._appSettingLinkLabel1.Size = new System.Drawing.Size(60, 11);
+            this._appSettingLinkLabel1.TabIndex = 5;
+            this._appSettingLinkLabel1.TabStop = true;
+            this._appSettingLinkLabel1.Text = "ファイルを開く";
+            this.toolTip1.SetToolTip(this._appSettingLinkLabel1, "ファイルをメモ帳で開きます。");
+            this._appSettingLinkLabel1.Click += new System.EventHandler(this._linkLabel1_Click);
             // 
             // SettingDialog
             // 
@@ -182,6 +182,6 @@
         private System.Windows.Forms.Button _cancelButton;
         private System.Windows.Forms.Button _okButton;
         private System.Windows.Forms.OpenFileDialog _openFileDialog1;
-        private System.Windows.Forms.LinkLabel _linkLabel1;
+        private System.Windows.Forms.LinkLabel _appSettingLinkLabel1;
     }
 }

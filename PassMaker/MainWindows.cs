@@ -8,19 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PassMaker
+namespace SimplePasswordGenerator
 {
-    public partial class PasswordMaker : Form
+    public partial class MainWindow : Form
     {
         TextBox[] textboxes;
         PasswordGenerater passGen;
-        public LogHandler logHandler { get; }
+        public LogWriter logHandler { get; }
 
-        public PasswordMaker()
+        public MainWindow()
         {
             InitializeComponent();
             passGen = new PasswordGenerater();
-            logHandler = new LogHandler();
+            logHandler = new LogWriter();
             textboxes = new TextBox[] {
                 _textBox01,
                 _textBox02,
@@ -36,7 +36,7 @@ namespace PassMaker
             LoadSettings();
         }
 
-        
+
 
         private void LoadSettings()
         {
@@ -105,7 +105,7 @@ namespace PassMaker
         private void _settingLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             SettingDialog form = new SettingDialog(this);
-            form.Location = new Point(this.Location.X -120, this.Location.Y + 50);
+            form.Location = new Point(this.Location.X - 120, this.Location.Y + 50);
             form.ShowDialog(this);
             form.Dispose();
         }
@@ -169,7 +169,7 @@ namespace PassMaker
 
     }
 
-    public class LogHandler
+    public class LogWriter
     {
         public string FilePath { get; set; } = "";
         public bool Enable { get; set; } = false;

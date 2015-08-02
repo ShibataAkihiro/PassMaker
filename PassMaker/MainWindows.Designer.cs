@@ -1,6 +1,6 @@
-﻿namespace PassMaker
+﻿namespace SimplePasswordGenerator
 {
-    partial class PasswordMaker
+    partial class MainWindow
     {
         /// <summary>
         /// 必要なデザイナー変数です。
